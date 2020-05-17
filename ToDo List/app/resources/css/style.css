@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+
+body{
+  background:#e9fbed;
+  padding:80px;
+}
+
+body, input, button {
+  /*This is the bottom part of embeded section in Google Fonts *SEE HTML ROBOT FONT EMBED* */
+  font-family: 'Sulphur Point', sans-serif;
+
+}
+
+/* Outer box (non-text) */
+header{
+  width:98%;
+  height:60px;
+  position:fixed;
+  padding:15px;
+  top:0;
+  left:0;
+  z-index:5;
+  background: #A3F0D3;
+  box-shadow:0px 2px 4px rgba(114,194,202,0.15);
+  border-bottom-right-radius:10px;
+  border-bottom-left-radius:10px;
+
+}
+
+/* Inner box (text) */
+header input{
+  width:100%;
+  height:50px;
+  float:left;
+  color: #1d634b; /* hex code for input colour of text (after user types)*/
+  font-size:15px;
+  font-weight:400;
+  text-indent: 18px; /* Where input text begins from input box*/
+  padding:0 60px 0 0;
+  background:rgba(255,255,255,0.2);
+  border-top-left-radius:5px;
+  border-bottom-left-radius:5px;
+  border-top-right-radius:25px;
+  border-bottom-right-radius:25px;
+  border:0px;
+  box-shadow:none;
+  outline:none;
+
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  -o-appearance:none;
+  appearance:none;
+}
+/* This is the font colour of the input box (before user types)*/
+header input::-webkit-input-placeholder{
+  color:rgba(29,99,75,0.9);
+}
+
+header input::-moz-input-placeholder{
+  color:rgba(29,99,75,0.9);
+}
+
+header input::-moz-input-placeholder{
+  color:rgba(29,99,75,0.9);
+}
+
+header input::-ms-input-placeholder{
+  color:rgba(29,99,75,0.9);
+}
+
+header button {
+  width:50px;
+  height:50px;
+  position:absolute; /* Be on top of actual input field */
+  top:15px; /* to accomodate for padding */
+  right:15px; /* to accomodate for padding */
+  z-index: 2;
+  border-radius:25px; /*Changes button from square to circle*/
+  background:#fff;
+  border:0px;
+  box-shadow:none;
+  outline;none;
+
+
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  -o-appearance:none;
+  appearance:none;
+}
+
+  /* To position the add sign in add button */
+  header button svg {
+    width:22px;
+    height:22px;
+    position:absolute;
+    top:50%;
+    left:53%;
+    margin:-11.5px 0 0 -13px;
+
+}
+
+  header button svg .fill {
+    fill:#1d634b; /*fill colour same as header input text*/
+  }
+
+  .container {
+    width: 83%;
+    float:left;
+    padding:15px;
+
+  }
+
+  /*How to style todo list*/
+  ul.todo {
+    width:100%;
+    float:left;
+    list-style-type: none; /* this is how to get rid of bullet points */
+    position:relat
+  }
+
+
+
+  ul.todo li{
+    width:100%;
+    height:50px;
+    float:left;
+    font-size:17px;
+    font-weight:400;
+    color:#444;
+    line-height:20px;
+
+    background: #fff;
+    border-radius:5px;
+    position:relative;
+    box-shadow:0px 1px 2px rgba(44,62,80,0.10);
+    margin: 0 0 10px 0;
+    padding:14px 100px 14px 14px;
+
+  }
+  /* for no margin in last one*/
+  ul.todo li:last-of-type {
+    margin:0;
+  }
+
+  /* For the two buttons that will be next to each added to do task */
+
+  ul.todo li .buttons {
+    width: 100px;
+    min-height:50px;
+    position;absolute; /* if want absolute for a child, you need the parent to be position relative */
+    top:0;
+    right:0;
+  }
+
+  ul.todo li .buttons button {
+    width:50px;
+    height:50px;
+    float:left;
+    background:none;
+    position:relative;
+    border:0px;
+    box-shadow:none;
+    outline:none;
+    cursor:pointer;
+
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    appearance:none;
+
+  }
+  /* border between remove and completed buttons */
+  ul.todo li .buttons button:last-of-type:before {
+    content:'';
+    width:2px;
+    height:30px;
+    position:absolute;
+    top:10px;
+    left:0;
+    background:#edf0f1;
+  }
+
+
+
+  ul.todo li .buttons button svg {
+    width:22px;
+    height:22px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-13px 0 0 -13px;
+
+  }
+
+
+
+  /* the circle (outer) part of the done icon */
+  ul.todo li .buttons button.complete svg {
+    border-radius:20px;
+    border:2.1px solid #1d634b;
+    fill: #fff;
+
+    -webkit-transition:background 0.2s ease;
+    -moz-transition:background 0.2s ease;
+    -ms-transition:background 0.2s ease;
+    -o-transition:background 0.2s ease;
+    /* transition:background 0.2s ease; <-- this makes the little tick and cirle be highlighted at diff times*/
+    transition: 0.2s ease;
+    }
+
+
+  /* once done icon clicked */
+  ul.todo#completed li .buttons button.complete svg {
+    /* background: #25b99a; */
+    background:rgba(0,255,135,0.5);
+    border:2.1px solid #00ff87;
+
+  }
+  /* when hover on the done icon, it goes light green */
+  ul.todo:not(#completed) li .buttons button.complete:hover svg {
+    background:rgba(0,255,135,0.5);
+    border:2.1px solid #00ff87;
+
+  }
+
+
+  ul.todo:not(#completed) li .buttons button.complete:hover svg .fill{
+    fill: #00ff87;
+  }
+
+
+  /* once clicked, the tick goes to completed list and stays lighter green */
+  ul.todo#completed li .buttons button.complete svg .fill {
+    fill: #00ff87;
+  }
+
+
+  ul.todo li .buttons button svg .fill {
+    -webkit-transition:fill 0.2s ease;
+    -moz-transition:fill 0.2s ease;
+    -ms-transition:fill 0.2s ease;
+    -o-transition:fill 0.2s ease;
+    transition:fill 0.2s ease;
+  }
+
+
+  /* the tick (inner) part of the done icon as normal*/
+  ul.todo li .buttons button.complete svg .fill {
+    fill: #1d634b;
+  }
+
+  /* remove button colour when cursor is not hovering over button */
+  ul.todo li .buttons button.remove svg .fill {
+    fill: #1d634b;
+  }
+
+  /* hover over remove icon, colour changes to red */
+  ul.todo li .buttons button.remove:hover svg .fill {
+    fill: #D51313;
+  }
+
+
+  /* grab ul to do completed*/
+  ul.todo#completed:not(:empty) {
+    position:relative;
+    padding:-60px 0 0 0;
+    opacity: 0.5;
+  }
+
+/* the divider between done and not done tasks */
+/* once done icon clicked, the task is moved and made translucent/opaqueness is decreased*/
+  ul.todo#completed:not(:empty):before {
+    content: '';
+    width:400px;
+    height:3px;
+    background:#102528;
+    position:absolute;
+    top:-15px;
+    left:50%;
+    margin: 0 0 0 -75px;
+  }
